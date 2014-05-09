@@ -11,7 +11,7 @@ function getPageUrl(href) {
     return s.slice(0, 4).join("/");
 }
 
-$(document).bind("load", function() {
+$(function() {
     var h = window.location.href;
     var p = getPageUrl(h);
 
