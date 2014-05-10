@@ -18,4 +18,8 @@ $(function() {
     if (!inIframe() && h != p) {
         window.location.href = p + "/404.html";
     }
+
+    setTimeout(function() {
+        $("html, body").css({"display": "block"});
+    }, 500)
 });

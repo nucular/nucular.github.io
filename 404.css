@@ -7,6 +7,8 @@ body, html {
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.125rem;
+
+    display: none;
 }
 
 h1 {
