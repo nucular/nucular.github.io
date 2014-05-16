@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <script src="../share/jquery-1.9.1.min.js"></script>
+    <script src="../share/jquery.quickfit.js"></script>
+    <script>
+var end = new Date(Date.UTC(2014, 4, 16, 23, 0, 0, 0));
+var _second = 1000;
+var _minute = _second * 60;
+var _hour = _minute * 60;
+var _day = _hour * 24;
+
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
+
+function timeLeft(now) {
+    var distance = end - now;
+    if (distance < 0) {
+        t = "VOTE CLOSED!"
+    }
+    else {
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+
+        var t = pad(hours, 2) + ":" + pad(minutes, 2) + ":" + pad(seconds, 2);
+    }
+
+    $("#count").text(t);
+    document.title = t;
+    $("#count").quickfit({max: Infinity});
+}
+
+$(function() {
+    setInterval(function() {
+        timeLeft(new Date());
+    }, 1000);
+});
+    </script>
+
+    <style>
+body, html {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+
+    overflow: hidden;
+    background-color: black;
+}
+
+#container {
+    display: block;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    margin: -15% 0 0 -45%;
+
+    width: 90%;
+    height: 90%;
+}
+
+#count {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+#count:hover {
+    color: #eee;
+}
+#count:active {
+    color: #555;
+}
+
+#stuff {
+    color: white;
+    display: block;
+    position: fixed;
+    top: 5;
+    left: 5;
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <a href="http://e1.votenow.tv?app=web" id="count" target="__new">
+            ...
+        </a>
+    </div>
+</body>
+</html>
