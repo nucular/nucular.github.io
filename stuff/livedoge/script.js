@@ -12,6 +12,12 @@ function pad(num, size) {
     return s;
 }
 
+// Round to a specific number of decimal points
+function roundTo(num, prec) {
+    var n = Math.pow(10, prec);
+    return Math.round(num * n) / n
+}
+
 // HH:MM:SS timestamp for the messages
 function timeStamp() {
     var now = new Date();
@@ -54,7 +60,7 @@ function dispatchTransaction(e, p) {
 
 // Generate message to and from an adress inside sub_addresses
 function addressMessage(e, p, adr) {
-    var sh = p.x.hash.substr(0,5) + "." + p.x.hash.substr(-5,5);
+    var sh = p.x.hash.substr(0,5) + "&hellip;" + p.x.hash.substr(-5,5);
 
     var fee = 0;
     for (var i = 0; i < p.x.inputs.length; i++) {
@@ -66,8 +72,8 @@ function addressMessage(e, p, adr) {
         + "\">Transaction " + sh + "</a> outgoing from "
         + "subscribed address <a href=\"http://dogechain.info/address/" + adr + "\">"
         + adr + "</a> "
-        + "sent &ETH;<b>" + (p.x.value_out / 100000000 + fee)
-        + "</b> minus &ETH;<b>" + fee + "</b> fee from <b>" + p.x.vin_sz
+        + "sent &ETH;<b>" + roundTo(p.x.value_out / 100000000 + fee, 8)
+        + "</b> minus &ETH;<b>" + roundTo(fee, 8) + "</b> fee from <b>" + p.x.vin_sz
         + "</b> input(s) to <b>" + p.x.vout_sz + "</b> output(s)";
 
     return [t, "address"];
@@ -77,7 +83,7 @@ function addressMessage(e, p, adr) {
 function unconfMessage(e, p) {
     if (!sub_unconf)
         return;
-    var sh = p.x.hash.substr(0,5) + "." + p.x.hash.substr(-5,5);
+    var sh = p.x.hash.substr(0,5) + "&hellip;" + p.x.hash.substr(-5,5);
 
     var fee = 0;
     for (var i = 0; i < p.x.inputs.length; i++) {
@@ -86,8 +92,8 @@ function unconfMessage(e, p) {
     fee -= p.x.value_out / 100000000;
 
     var t = "<a href=\"http://dogechain.info/tx/" + p.x.hash
-        + "\">Transaction " + sh + "</a> sent &ETH;<b>" + (p.x.value_out / 100000000 + fee)
-        + "</b> minus &ETH;<b>" + fee + "</b> fee from <b>" + p.x.vin_sz
+        + "\">Transaction " + sh + "</a> sent &ETH;<b>" + roundTo(p.x.value_out / 100000000 + fee, 8)
+        + "</b> minus &ETH;<b>" + roundTo(fee, 8) + "</b> fee from <b>" + p.x.vin_sz
         + "</b> input(s) to <b>" + p.x.vout_sz + "</b> output(s)";
 
     return [t, "unconf"];
@@ -98,9 +104,9 @@ function blocksMessage(e, p) {
     if (!sub_blocks)
         return;
     var t = "<a href=\"http://dogechain.info/block/" + p.x.hash
-        + "\">Block nr." + p.x.height + "</a> mined by <b>" + p.x.miner
-        + "</b> with <b>" + p.x.n_tx + "</b> transaction(s), difficulty of <b>" + p.x.difficulty
-        + "</b> (<b>" + p.x.bits + "</b> bits) with &ETH;<b>" + (p.x.reward / 100000000) + "</b> reward";
+        + "\">Block #" + p.x.height + "</a> mined by <b>" + p.x.miner
+        + "</b> with <b>" + p.x.n_tx + "</b> transaction(s), difficulty of <b>" + roundTo(p.x.difficulty, 5)
+        + "</b> (<b>" + p.x.bits + "</b> bits) with &ETH;<b>" + roundTo(p.x.reward / 100000000, 8) + "</b> reward";
     return [t, "block"];
 }
 
