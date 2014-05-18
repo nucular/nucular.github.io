@@ -15,8 +15,8 @@ $(function() {
     var h = window.location.href;
     var p = getPageUrl(h);
 
-    if (!inIframe() && h != p) {
-        window.location.href = p + "/404.html";
+    if (!inIframe() && h != p && window.location.search != "?redirected") {
+        window.location.href = p + "/404.html?redirected";
     }
 
     setTimeout(function() {
