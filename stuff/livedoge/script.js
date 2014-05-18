@@ -5,12 +5,14 @@ var sub_blocks = false;
 var connection;
 var ticker;
 
+// Add size leading zeros to num
 function pad(num, size) {
     var s = num+"";
     while (s.length < size) s = "0" + s;
     return s;
 }
 
+// HH:MM:SS timestamp for the messages
 function timeStamp() {
     var now = new Date();
     return pad(now.getHours(), 2) + ":"
@@ -18,6 +20,7 @@ function timeStamp() {
         + pad(now.getSeconds(), 2);
 }
 
+// Generate message for a status event
 function statusMessage(e, p) {
     switch (p.msg) {
         case "welcome":
@@ -29,6 +32,7 @@ function statusMessage(e, p) {
     }
 }
 
+// Either return the result of addressMessage or unconfMessage depending on the inputs
 function dispatchTransaction(e, p) {
     if (sub_addresses.length == 0)
         return unconfMessage(e, p);
@@ -62,8 +66,8 @@ function addressMessage(e, p, adr) {
         + "\">Transaction " + sh + "</a> outgoing from "
         + "subscribed address <a href=\"http://dogechain.info/address/" + adr + "\">"
         + adr + "</a> "
-        + "sent <b>" + (p.x.value_out / 100000000 + fee)
-        + "</b>&ETH; minus <b>" + fee + "</b>&ETH; fee from <b>" + p.x.vin_sz
+        + "sent &ETH;<b>" + (p.x.value_out / 100000000 + fee)
+        + "</b> minus &ETH;<b>" + fee + "</b> fee from <b>" + p.x.vin_sz
         + "</b> input(s) to <b>" + p.x.vout_sz + "</b> output(s)";
 
     return [t, "address"];
@@ -82,8 +86,8 @@ function unconfMessage(e, p) {
     fee -= p.x.value_out / 100000000;
 
     var t = "<a href=\"http://dogechain.info/tx/" + p.x.hash
-        + "\">Transaction " + sh + "</a> sent <b>" + (p.x.value_out / 100000000 + fee)
-        + "</b>&ETH; minus <b>" + fee + "</b>&ETH; fee from <b>" + p.x.vin_sz
+        + "\">Transaction " + sh + "</a> sent &ETH;<b>" + (p.x.value_out / 100000000 + fee)
+        + "</b> minus &ETH;<b>" + fee + "</b> fee from <b>" + p.x.vin_sz
         + "</b> input(s) to <b>" + p.x.vout_sz + "</b> output(s)";
 
     return [t, "unconf"];
@@ -96,7 +100,7 @@ function blocksMessage(e, p) {
     var t = "<a href=\"http://dogechain.info/block/" + p.x.hash
         + "\">Block nr." + p.x.height + "</a> mined by <b>" + p.x.miner
         + "</b> with <b>" + p.x.n_tx + "</b> transaction(s), difficulty of <b>" + p.x.difficulty
-        + "</b> (<b>" + p.x.bits + "</b> bits) with <b>" + (p.x.reward / 100000000) + "</b>&ETH; reward";
+        + "</b> (<b>" + p.x.bits + "</b> bits) with &ETH;<b>" + (p.x.reward / 100000000) + "</b> reward";
     return [t, "block"];
 }
 
