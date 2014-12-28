@@ -1,0 +1,82 @@
+==================================================================
+https://keybase.io/nucular
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nucular.github.io
+  * I am nucular (https://keybase.io/nucular) on keybase.
+  * I have a public key with fingerprint 4051 CE6C 01CD 6C7A 8670  75AF 6865 2DB2 EBE0 33EF
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.7.3"
+        },
+        "key": {
+            "fingerprint": "4051ce6c01cd6c7a867075af68652db2ebe033ef",
+            "host": "keybase.io",
+            "key_id": "68652DB2EBE033EF",
+            "uid": "bd8d0e8e524195d9a233f15c7babad00",
+            "username": "nucular"
+        },
+        "merkle_root": {
+            "ctime": 1419798417,
+            "hash": "a0304b59a958f9343e124853ba86af0cb8c22aacb8fd9c8516726e455f32ca2bbd89c614dd9c9cb660f65fece2b7bf4ad0796fddaa629c048039d859eb179c66",
+            "seqno": 117527
+        },
+        "service": {
+            "hostname": "nucular.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1419798533,
+    "expire_in": 157680000,
+    "prev": "8308b5369e54d13a88aa9121b460330362852dc62106bde05d083a9392bc06b0",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2
+
+owFVUn1MV1UY5kPBYlg4s+Qj8eLYIvxxvz9YxeJDa45MJyOagefcey6/G3B/cO/9
+IcRIASWomJZi2fhqMxVRWoQCgRkwVMRFU1wuhgOKFRmRhkxCsHOJVpx/zsf7vM/7
+PO97Dvp7e3h5OtHGptvDzKRn3zj02FHnXF5AQJeST0QXEHKmhnTLPukgCxHRRAbK
+h8BEDs0VqrsU5HjTDF3ERBK5yDA1l45RpENwMERhpA23k1VNT0dGtqHZXARLcpSM
+eJmkZIWXBSDyAilwQOVFnqMVSCOISIZBKqZ0ukxrSVVigTNNU/DrAj4+lk6ITcD4
+hE045l4IQEVUSCQijmYpiVMkQDOMSnGyAAEECknaQBMZi5Z0t+zOBIYtNwsZGZko
+zXC5FjzLlmYjKMwiSCJLCVgQMJ04B5AMyUJOAhInqhLDMoiiWZFjIDYDVFKGokzT
+AOBdVSRZ5CheoHnEcpzK0DKgIVYoyTzFKjgqyZDnSZXnVCQjGgpQZbFIQeJVRQGA
+pyWZZEWSkRSRkxCkBJzIYwcmytFdWBwlcLRQaN+NXE1Gtm67a0vNOdI1y+mG/zQw
+23BZLtmVicNOy8o2o23rVn42xjcRuxFMW6RKg5qu4Mn9f7QUhi5tC8cwkQTKy9YM
+lKbZCE7gRRIvuxDKxUVEhhQhx/AS4liFYoAoAiBRNAVZHs+NZHhaxHOXeZoieagg
+klNIkQESI9FQxi/kf2ZZrBOkY0pTS9eB5TYQUVjuFbzMw9PLw2e5l/13PR595PF/
+P/T2y4/Nh38TmH44LrR7mbt9HJUkdbrfqRryeXaFp7X/rbnRmDO31plrm/XTB47W
+R6jvR883tEU1n0u8NGDGlF0IqJ14NSSj5PkdXQ+iqnq3dpS+W5VS6rIkcrQ7cDZA
+SiSiY27c8W2pjifiLv462cTyQwnbKn9/Ypx1nk0eKCpt9C3/S5oI+vlPYqq90Ltl
+7Jf7uzr1H1sbPxk2CydW3Mj0S953PGP82PVBaE51NCcl9uVtj/oijG/sqqy90t6u
+txbf8R6WfjvRdd7z6MO4nUd6Rz7V2hs+D1r53eotBc3b+uemb5IzymxOm9Fz5oWe
+DeVTs689qA15+FNg8u6ie6u6K9WGLL9r762Nleb6rm685aiZeX0kJnF1nO/MiXM3
+X+4/2PpxBIwdCEUZRXv8Uy60Pzd0aaiciSg6FkH2oDem9kQGJIKp9U/GnzweaUU3
+7h1a/yG6NzZyYvfty1ezq5MzS3OGpb0dK1KDibazF7eu3Lc/bPCKnpt26JlN86Gb
+13R/9tEaUDb5dcQPqxxN8Ye8OlsP+J0qrjt/arA2Of7+VOuuFu7p6eKs0+GpeVLv
+3PSs1ZDT6VmXNH+MGHz7jyDjZEXuka/uFo32rKov29LKp3s9dbgstSu5L6XGr4a4
+C+rDhJC4Vzyijq/j3CVz319DkxvG+iJebDhVzft/W1Sz/fr05qYPBr4M31kR/FJF
+v8/f
+=6rEU
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nucular
+
+==================================================================
