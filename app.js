@@ -8,12 +8,12 @@ $(function() {
     var pos = $trigger.position();
     var center = {
       top: pos.top + $trigger.height()/2,
-      left: pos.left + $trigger.width()/2
+      left: pos.left + $trigger.width()
     };
 
     $target.find(".sub.fab").each(function(i, v) {
       var $fab = $(v);
-      $fab.css("transition-delay", (i / 10 + Math.random()*0.1) + "s");
+      $fab.css("transition-delay", (i / 10) + "s");
 
       if (!$target.hasClass("expanded")) {
         $fab.css({
@@ -22,9 +22,10 @@ $(function() {
         });
       } else {
         var fpos = $fab.offset();
+        console.log(center, fpos);
         $fab.css({
-          "top": -((fpos.top - center.top) + $fab.height()/2) + "px",
-          "left": -((fpos.left - center.left) - $fab.width()) + "px"
+          "top": -(fpos.top - center.top) + "px",
+          "left": -(fpos.left - center.left) + "px"
         });
       }
     });
