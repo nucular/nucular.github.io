@@ -1,0 +1,117 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    height: 100%;
+}
+
+#wrapper {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+.button {
+  width: 80%;
+  height: 80%;
+  transition: width ease 0.3s, height ease 0.3s;
+
+  animation: spin linear 30s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  -webkit-animation: spin linear 30s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: spin linear 30s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+}
+
+.button:hover {
+  width: 90%;
+  height: 90%;
+}
+
+.button:active {
+  width: 100%;
+  height: 100%;
+  transition: width ease-out 0.05s, height ease-out 0.05s;
+}
+
+
+.content {
+  display: block;
+  padding: 10px;
+  width: auto;
+  height: auto;
+  opacity: 1;
+  overflow: hidden;
+  transition: opacity ease 0.7s;
+}
+.content.collapsed {
+  opacity: 0;
+}
+
+.content.bottom {
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: opacity ease 0.5s, height ease 1s, padding ease 0.8s;
+}
+.content.bottom.collapsed {
+  height: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.content.top * {
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: opacity ease 0.5s, height ease 1s, padding ease 0.8s;
+}
+.content.top.collapsed * {
+  height: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) ;
+  }
+  50% {
+    transform: rotate(180deg) ;
+  }
+  100% {
+    transform: rotate(360deg) ;
+  }
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg) ;
+  }
+  50% {
+    -moz-transform: rotate(180deg) ;
+  }
+  100% {
+    -moz-transform: rotate(360deg) ;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg) ;
+  }
+  50% {
+    -webkit-transform: rotate(180deg) ;
+  }
+  100% {
+    -webkit-transform: rotate(360deg) ;
+  }
+}
