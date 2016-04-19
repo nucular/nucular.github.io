@@ -48,7 +48,7 @@ $(function() {
 
   setTimeout(function() {
     $(".fab[expands]").mousedown().click();
-  }, 500);
+  }, 100);
 
 
   var $canvas = $("#background");
