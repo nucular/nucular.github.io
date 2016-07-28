@@ -35,6 +35,8 @@ a {
 
 .content {
   text-align: center;
+  margin: auto auto;
+  padding-bottom: 1em;
 }
 
 .fab {
@@ -65,9 +67,6 @@ a {
 .fab > .fa {
   vertical-align: middle;
   line-height: 56px;
-}
-.fab > img {
-  border-radius: 49%;
 }
 
 .fab .inner {
